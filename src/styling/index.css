@@ -1,0 +1,15 @@
+html, body, #root {
+    height: 100%;
+}
+
+body {
+    background-color: thistle;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    width: 95%;
+    height: 95%;
+    border: 0;
+}
