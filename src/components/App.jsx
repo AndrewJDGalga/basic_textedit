@@ -8,7 +8,9 @@ function App() {
   return (
     <>
       {/*fileText !== '' && <textarea value={fileText}></textarea>*/}
+      <button id="save">&#128190;</button>
       <textarea value={fileText} onChange={e=>setFileText(e.target.value)}></textarea>
+      
     </>
   )
 }
