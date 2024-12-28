@@ -12,7 +12,6 @@ body {
 #root {
     display: flex;
     flex-direction: row;
-
     align-items: center;
 }
 
@@ -31,8 +30,22 @@ textarea:focus {
     outline: 2px solid goldenrod;
 }
 
-#save {
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
     min-width: 64px;
     min-height: 64px;
     font-size: xx-large;
+    background-color: whitesmoke;
+}
+button:hover {
+    background-color: black;
+    color: whitesmoke;
+}
+button:active {
+    background-color: goldenrod;
+    color: black;
 }
