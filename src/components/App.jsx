@@ -2,11 +2,12 @@ import { useState } from 'react'
 import '../styling/index.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [fileText, setFileText] = useState('Test text');
 
   return (
     <>
-      <textarea></textarea>
+      {/*fileText !== '' && <textarea value={fileText}></textarea>*/}
+      <textarea value={fileText}></textarea>
     </>
   )
 }
