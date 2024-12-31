@@ -13,6 +13,8 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    max-width: 66ch;
+    margin: 0 auto;
 }
 
 textarea {
@@ -52,4 +54,17 @@ button:hover {
 button:active {
     background-color: goldenrod;
     color: black;
+}
+
+@media all and (max-width: 576px) {
+    #root {
+        flex-direction: column;
+    }
+    textarea {
+        width: 100%;
+        padding: 6px;
+    }
+    section {
+        flex-direction: row;
+    }
 }
