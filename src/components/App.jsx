@@ -13,7 +13,7 @@ function App() {
         <CustButton id="reset" inner="&#10227;" func={()=>{}}></CustButton>
         <CustButton id="load" inner="&#10581;" func={()=>{}}></CustButton>
       </section>
-      <textarea value={fileText} onChange={e=>setFileText(e.target.value)} placeholder='Start typing or select &#10581; to load a .txt file...'></textarea>
+      <textarea value={fileText} onChange={e=>setFileText(e.target.value)} placeholder='Click inside this box and start typing. OR, select &#10581; in the left-side menu to load a .txt file...'></textarea>
       
     </>
   )
