@@ -17,6 +17,11 @@ body {
     margin: 0 auto;
 }
 
+#file_selector {
+    /*visibility: hidden;*/
+    display: none;
+}
+
 textarea {
     width: 95%;
     height: 100%;
