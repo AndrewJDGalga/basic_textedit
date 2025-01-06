@@ -15,19 +15,29 @@ function loadFile(selector, contentsSetter, locationStringSetter){
 
 
 function App() {
-    const [filePath, setFilePath] = useState('');
+    //const [filePath, setFilePath] = useState('');
     const [fileText, setFileText] = useState('');
+    const hiddenFilePath = useRef(null);
 
-    const HFP = useRef(null);
+    /*
+    const onSetFilePath = (str) => {
+        setFilePath(str);
+
+        console.log(filePath);
+    }
+    */
+
+    const onSetFileText = (str) => {
+        
+    }
 
     return (
         <>
             <section>
-                <HiddenFilePrompt nodeRef={HFP} filePath={setFilePath}></HiddenFilePrompt>
+                <HiddenFilePrompt nodeRef={hiddenFilePath} newText={setFileText}></HiddenFilePrompt>
                 <CustButton id="save" inner="&#128190;" func={() => { }}></CustButton>
                 <CustButton id="reset" inner="&#10227;" func={() => { resetStrings(setFilePath, setFileText) }}></CustButton>
-                {/*<CustButton id="load" inner="&#10583;" func={() => { loadFile(fileSelector, setFileText, setFilePath) }}></CustButton>*/}
-                <CustButton id="load" inner="&#10583;" func={() => { HFP.current.click() }}></CustButton>
+                <CustButton id="load" inner="&#10583;" func={() => { hiddenFilePath.current.click() }}></CustButton>
             </section>
             <textarea value={fileText} onChange={e => setFileText(e.target.value)} placeholder='Click inside this box and start typing. OR, select &#10583; in the left-side menu to load a .txt file...'></textarea>
 
