@@ -1,4 +1,4 @@
-import { useImperativeHandle, useState } from "react"
+import { useState } from "react"
 
 function HiddenFilePrompt({nodeRef, newText}) {
     const [path, setPath] = useState('');
@@ -9,18 +9,13 @@ function HiddenFilePrompt({nodeRef, newText}) {
         const fileData = e.target.files[0];
 
         const reader = new FileReader();
-        reader.onprogress = (e) => {
-            console.log('loading...');
+        reader.onloadstart = () => {
+            newText('loading...');
         }
         reader.onload = (e) => {
-            //console.log(e.target.result);
-            //setPath(e.target.result);
-            console.log('complete');
             newText(e.target.result);
         }
         reader.readAsText(fileData);
-
-        //newText(path);
     }
 
     return (

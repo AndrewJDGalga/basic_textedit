@@ -15,17 +15,8 @@ function loadFile(selector, contentsSetter, locationStringSetter){
 
 
 function App() {
-    //const [filePath, setFilePath] = useState('');
     const [fileText, setFileText] = useState('');
     const hiddenFilePath = useRef(null);
-
-    /*
-    const onSetFilePath = (str) => {
-        setFilePath(str);
-
-        console.log(filePath);
-    }
-    */
 
     const onSetFileText = (str) => {
         
