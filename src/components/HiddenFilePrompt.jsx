@@ -1,14 +1,12 @@
 import { useState } from "react"
 
-function HiddenFilePrompt({nodeRef, newText}) {
-    const [path, setPath] = useState('');
-
+function HiddenFilePrompt({nodeRef, newText, path, setPath}) {
     const onSetPath = (e) => {
         setPath(e.target.value);
 
         const fileData = e.target.files[0];
-
         const reader = new FileReader();
+        
         reader.onloadstart = () => {
             newText('loading...');
         }
