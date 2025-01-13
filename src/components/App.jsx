@@ -5,6 +5,9 @@ import HiddenFilePrompt from './HiddenFilePrompt';
 function App() {
     const [fileText, setFileText] = useState('');
     const [path, setPath] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
+    const searchIndex = useRef(-1);
+    
     const hiddenFilePath = useRef(null);
 
     const resetState = () => {
@@ -25,13 +28,18 @@ function App() {
         }
         reader.readAsText(fileData);
     }
-    const saveFile = () => {
-
+    const searchFile = (e) => {
+        setSearchTerm(e.target.value);
+    }
+    const saveFile = (e) => {
+        console.log(e)
     }
 
     return (
         <>
             <section>
+                <input type="text" value={searchTerm} onChange={searchFile}></input>
+                <a href="#" download>Download Test</a>
                 <HiddenFilePrompt nodeRef={hiddenFilePath} newText={setFileText} path={path} setPath={setPath} loadFile={loadFile}></HiddenFilePrompt>
                 <button id="save" onClick={saveFile}>&#128190;</button>
                 <button id="reset" onClick={resetState}>&#10227;</button>
